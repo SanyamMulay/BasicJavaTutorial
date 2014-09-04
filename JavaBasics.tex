@@ -28,23 +28,32 @@
 \definecolor{pred}{rgb}{0.9,0,0}
 \definecolor{pgrey}{rgb}{0.46,0.45,0.48}
 
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
 %configuring listings package to highlight java syntax
 \newcommand\javastyle{\lstset{
 language=Java,
-%basicstyle=\ttm,
-otherkeywords={this},             % Add keywords here
-%keywordstyle=\ttb\color{deepblue},
-emph={MyClass,__init__},          % Custom highlighting
-emphstyle=\ttb\color{pred},    % Custom highlighting style
-%stringstyle=\color{deepgreen},
-commentstyle=\color{pgreen},
-keywordstyle=\ttb\color{pblue},
-stringstyle=\color{pred},
 basicstyle=\ttfamily,
+keywordstyle=\color{javapurple}\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+numbers=left,
+numberstyle=\tiny\color{black},
+stepnumber=1,
+tabsize=4,
+showspaces=false,
+otherkeywords={this, class, enum},             % Add keywords here
+%keywordstyle=\ttb\color{deepblue},
+emph={MyClass,Pizza,},          % Custom highlighting
+emphstyle=\ttb\color{pred},    % Custom highlighting style
 moredelim=[il][\textcolor{pgrey}]{$$}, %$$ %the double dollar to prevent texmaker from going crazy
-moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
+%moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
 %frame=tb,                         % Any extra options here
-showstringspaces=false            % 
+showstringspaces=false, 
 }}
 
 % java environment
@@ -80,39 +89,49 @@ showstringspaces=false            %
 % preparing the code
 \defverbatim[colored]\pycode{%
 \begin{java}
-class MyClass(Yourclass):;
-    def __init__(self, my, yours):;
-        bla = '5 1 2 3 4';
-        print bla;
+
 \end{java}
 }
-% preparing the slide
-\begin{frame}[containsverbatim]{The java Interpreter}
-	\begin{flushleft}
-	\begin{enumerate}
-		\item{Invoking the interpreter:} \\
-		\javainline{java}
-		\item{We like Ijava}\\
-		\javainline{ijava}
-		\item{here is some more java code} \\
-		\pycode
-		\item{running a java script} \\
-		\begin{java}
-		run HelloWorld.py
-		\end{java}
-	\end{enumerate}
-	\end{flushleft}
-\end{frame}
+%%%%%%%%%%%%%%%%%%%%
 
+%START MAKING SLIDES FROM HERE ON
 
+%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[containsverbatim]{Defining java classes}
+\begin{frame}[containsverbatim]{Hello World}
 \begin{java}
-class MyClass(Yourclass):
-    def __init__(self, my, yours):
-        bla bla bla...
+public class MyClass{
+/* This will program print 
+ * 'Hello World' as the output
+ */
+	public static void main(String[]args){
+		System.out.println("Hello World"); 
+		// prints Hello World
+	}
+}
 \end{java}
 \end{frame}
+
+
+\begin{frame}[containsverbatim]{Enum Example}
+\begin{java}
+class Pizza{
+	enum PizzaSize{ SMALL, MEDUIM, LARGE }
+	PizzaSize size;
+}
+
+public class PizzaTest{
+	public static void main(String args[]){
+		Pizza p =new Pizza();
+		p.size =Pizza.PizzaSize.MEDUIM ;
+	}
+}
+\end{java}
+\end{frame}
+
+
+
+
 
 
 \end{document}
