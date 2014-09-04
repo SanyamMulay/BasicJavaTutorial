@@ -48,7 +48,7 @@ tabsize=4,
 showspaces=false,
 otherkeywords={this, class, enum},             % Add keywords here
 %keywordstyle=\ttb\color{deepblue},
-emph={MyClass,Pizza,},          % Custom highlighting
+emph={MyClass,Pizza,className},          % Custom highlighting
 emphstyle=\ttb\color{pred},    % Custom highlighting style
 moredelim=[il][\textcolor{pgrey}]{$$}, %$$ %the double dollar to prevent texmaker from going crazy
 %moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
@@ -130,8 +130,106 @@ public class PizzaTest{
 \end{frame}
 
 
+\begin{frame}[containsverbatim]{Basic Class Syntax}
+\begin{java}
+public className {
+	// Instance Variables 
+	int age;
+	
+	// Constructor
+	public className(){
+	}
+	
+	// Static Variables
+	static String country;
+
+	void MethodName(){
+		// Local Variables
+		String city;
+	}
+}
+\end{java}
+\end{frame}
 
 
+\begin{frame}[containsverbatim]{Basic Class Syntax}
+\begin{java}
+public class Dog{
+	String breed;
+	int age;
+	String color;
 
+	void barking(){
+	}
+
+	void hungry(){
+	}
+
+	void sleeping(){
+	}
+}
+\end{java}
+\end{frame}
+
+
+\begin{frame}[containsverbatim]{Constructors}
+\begin{java}
+public class Person{
+
+	String name;
+	
+	public Person(){
+	}
+	
+	public Person(String name){
+		this.name = name;
+	}
+}
+\end{java}
+\end{frame}
+
+
+\begin{frame}[containsverbatim]{Constructors}
+\begin{java}
+public class SingletonClass{
+private static SingletonClass instance = null;
+	
+	protected SingletonClass(){
+		// Exists only to defeat instantiation.
+	}
+	public static SingletonClass getInstance(){
+		if(instance == null){
+			instance = new SingletonClass();
+		}
+		return instance;
+	}
+}
+\end{java}
+\end{frame}
+
+\begin{frame}[containsverbatim]{Creating Objects}
+\begin{java}
+import package.name.Person;
+
+public class PersonTest{
+
+	public static void main(String[]args){
+	
+		// created the reference which 
+		// will point to object
+		Person ram;
+		
+		// assign an object to reference
+		ram = new Person("Ram");
+	}
+}
+\end{java}
+\end{frame}
+
+\begin{frame}[containsverbatim]{Creating Objects}
+\begin{java}
+
+\end{java}
+\end{frame}
 
 \end{document}
