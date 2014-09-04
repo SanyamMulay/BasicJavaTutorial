@@ -1,0 +1,118 @@
+\documentclass[11pt]{beamer}
+
+% list of packages used
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{listings}
+
+% Author details
+\author{Vinay @EduTechLabs}
+\title{Java Basics}
+
+% configs
+
+%%set theme 
+\usetheme{Warsaw}
+
+%%configure listings package for java
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{8pt} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{8pt}  % for normal
+
+%custom colours
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+
+%configuring listings package to highlight java syntax
+\newcommand\javastyle{\lstset{
+language=Java,
+%basicstyle=\ttm,
+otherkeywords={this},             % Add keywords here
+%keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{pred},    % Custom highlighting style
+%stringstyle=\color{deepgreen},
+commentstyle=\color{pgreen},
+keywordstyle=\ttb\color{pblue},
+stringstyle=\color{pred},
+basicstyle=\ttfamily,
+moredelim=[il][\textcolor{pgrey}]{$$}, %$$ %the double dollar to prevent texmaker from going crazy
+moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
+%frame=tb,                         % Any extra options here
+showstringspaces=false            % 
+}}
+
+% java environment
+\lstnewenvironment{java}[1][]
+{
+\javastyle
+\lstset{#1}
+}
+{}
+
+% java for external files
+\newcommand\javaexternal[2][]{{
+\javastyle
+\lstinputlisting[#1]{#2}}}
+
+% java for inline
+\newcommand\javainline[1]{{\javastyle\lstinline!#1!}}
+
+%%%%%%%%%%%% begin writing the actual document %%%%%%%%%%%%%%%%%
+\begin{document}
+
+%get the title page
+\frame{\maketitle}
+% welcome page 
+\begin{frame}{Welcome to the course}
+	\begin{center}
+	 Welcome to \emph{\color{pblue}EduTechLab's} basic java Course.
+	\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%% about java
+
+% preparing the code
+\defverbatim[colored]\pycode{%
+\begin{java}
+class MyClass(Yourclass):;
+    def __init__(self, my, yours):;
+        bla = '5 1 2 3 4';
+        print bla;
+\end{java}
+}
+% preparing the slide
+\begin{frame}[containsverbatim]{The java Interpreter}
+	\begin{flushleft}
+	\begin{enumerate}
+		\item{Invoking the interpreter:} \\
+		\javainline{java}
+		\item{We like Ijava}\\
+		\javainline{ijava}
+		\item{here is some more java code} \\
+		\pycode
+		\item{running a java script} \\
+		\begin{java}
+		run HelloWorld.py
+		\end{java}
+	\end{enumerate}
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}[containsverbatim]{Defining java classes}
+\begin{java}
+class MyClass(Yourclass):
+    def __init__(self, my, yours):
+        bla bla bla...
+\end{java}
+\end{frame}
+
+
+\end{document}
