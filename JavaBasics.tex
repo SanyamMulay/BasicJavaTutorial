@@ -48,7 +48,7 @@ tabsize=4,
 showspaces=false,
 otherkeywords={this, class, enum},             % Add keywords here
 %keywordstyle=\ttb\color{deepblue},
-emph={MyClass,Pizza,},          % Custom highlighting
+emph={MyClass,Pizza,className},          % Custom highlighting
 emphstyle=\ttb\color{pred},    % Custom highlighting style
 moredelim=[il][\textcolor{pgrey}]{$$}, %$$ %the double dollar to prevent texmaker from going crazy
 %moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
@@ -102,7 +102,7 @@ showstringspaces=false,
 \begin{java}
 public class MyClass{
 /* This will program print 
- * 'Hello World' as the output
+ * `Hello World' as the output
  */
 	public static void main(String[]args){
 		System.out.println("Hello World"); 
@@ -110,6 +110,52 @@ public class MyClass{
 	}
 }
 \end{java}
+\end{frame}
+
+\begin{frame}[containsverbatim]{Compile and run java program}
+	\begin{flushleft}
+	
+	
+		\item{Running a java program} \\
+		\begin{java}
+		javac HelloWorld.java
+		java HelloWorld
+		\end{java}
+		\item{Note: navigate to java file location through terminal before executing above commands.}
+	\end{flushleft}
+	
+\end{frame}
+
+\begin{frame}[containsverbatim]{Java Comments}
+\begin{java}
+public class HelloWorld{
+
+public static void main(String[]args){
+  // an example of single line comment
+  System.out.println("Hello World");
+  /* Multi line commants 
+   are given like this. */
+  }
+}
+\end{java}
+\end{frame}
+
+\begin{frame}[containsverbatim]{Java Class Structure}
+\begin{java}
+public class ClassName{
+  String name;      // instance variable
+  static int count; // class variable
+
+  public ClassName(String name){ // constructor
+    this.name = name;  
+  }
+
+  void method1(){
+    String address; // local variable
+  }  
+}
+\end{java}
+
 \end{frame}
 
 
@@ -130,6 +176,388 @@ public class PizzaTest{
 \end{frame}
 
 
+\begin{frame}[containsverbatim]{Basic Class Syntax}
+\begin{java}
+public class Dog{
+	String breed;
+	int age;
+	String color;
+
+	void barking(){
+	}
+
+	void hungry(){
+	}
+
+	void sleeping(){
+	}
+}
+\end{java}
+\end{frame}
+
+
+\begin{frame}[containsverbatim]{Constructors}
+\begin{java}
+public class Person{
+
+	String name;
+	
+	public Person(){
+	}
+	
+	public Person(String name){
+		this.name = name;
+	}
+}
+\end{java}
+\end{frame}
+
+\begin{frame}[containsverbatim]{Java Constructor}
+\begin{java}
+public class Dog{
+  String name;  
+  
+  public Dog(){
+  }
+
+  public Dog(String name){
+  this.name = name;
+  }
+}
+\end{java}
+
+
+\begin{java}
+Dog Bruno = new Dog();
+Dog Bruno = new Dog("Bruno");
+\end{java}
+
+\end{frame}
+
+\begin{frame}[containsverbatim]{Getters and Setters}
+\begin{java}
+public class Dog{
+  String name;  
+  
+  public Dog(){
+  }
+  public Dog(String name){
+    this.name = name;
+  }
+  
+  public String getName(){
+    return this.name;  
+  }
+  public void setName(String name){
+    this.name = name;
+  }  
+}
+\end{java}
+\end{frame}
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{Things to remember while creating Classes}
+
+\begin{enumerate}
+\item One .java file can have multiple classes.
+\item Only one class per .java file can be public.
+\item All remaining classes must be non-public.
+\item Name of the public class must be the name of .java class.
+\item class declared in package must begin with the package identification line
+\begin{java}
+package com.example;
+\end{java}
+
+
+\item import statements must be written between package declaration and class definition
+\begin{java}
+package com.example;
+import ...
+public class Dog{
+  ....
+}
+\end{java}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[containsverbatim,allowframebreaks]{Data Types}
+\begin{enumerate}
+\item Primitive Data Types
+\begin{enumerate}
+\item byte
+\item short
+\item int
+\item long
+\item float
+\item double
+\item boolean
+\item char
+\end{enumerate}
+\item Object Data Types
+\begin{enumerate}
+\item Dog
+\item Person ...
+\end{enumerate}
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[containsverbatim]{Inheretence -- IS -- A Relation}
+\begin{java}
+public class Animal{
+	.....
+}
+
+  public class Mammal extends Animal{
+  	.....
+  }
+
+    public class Dog extends Mammal{
+    		.....
+    }
+
+  public class Reptile extends Animal{
+  	.....
+  }
+\end{java}
+\end{frame}
+
+
+\begin{frame}[containsverbatim]{IS -- A vs HAS -- A Relation}
+\begin{java}
+
+public class Vehicle{
+  ....
+}
+
+public class Engine{
+  ....
+}
+
+public class Car extends Vehicle{//IS-A relation
+  private Engine e;  //HAS-A relation
+  ....
+}
+\end{java}
+\end{frame}
+
+
+
+\begin{frame}[containsverbatim]{Singleton Class}
+\begin{java}
+public class SingletonClass{
+private static SingletonClass instance = null;
+	
+	protected SingletonClass(){
+		// Exists only to defeat instantiation.
+	}
+	public static SingletonClass getInstance(){
+		if(instance == null){
+			instance = new SingletonClass();
+		}
+		return instance;
+	}
+}
+\end{java}
+\end{frame}
+
+\begin{frame}[containsverbatim]{Creating Objects}
+\begin{java}
+import package.name.Person;
+
+public class PersonTest{
+
+	public static void main(String[]args){
+	
+		// created the reference which 
+		// will point to object
+		Person ram;
+		
+		// assign an object to reference
+		ram = new Person("Ram");
+	}
+}
+\end{java}
+\end{frame}
+
+\begin{frame}[containsverbatim]{Creating Objects}
+\begin{java}
+
+\end{java}
+\end{frame}
+
+
+\begin{frame}[containsverbatim]{Polymorphism}
+
+\end{frame}
+
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{Method Overloading}
+
+\end{frame}
+
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{Constructor Overloading}
+
+\end{frame}
+
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{Collections}
+
+\end{frame}
+
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{Arraylist}
+
+\end{frame}
+
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{Iterator}
+
+\end{frame}
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{Loops}
+
+\end{frame}
+
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{for loop}
+
+\end{frame}
+
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{while loop}
+
+\end{frame}
+
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{do while}
+
+\end{frame}
+
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{for loop iterator}
+
+\end{frame}
+
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{typecasting}
+
+\end{frame}
+
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{Access Modifiers -- Default, Public, Private, Protected}
+
+\begin{enumerate}
+\item \emph{Default} -- Visible to the package,  No modifiers are needed.
+\item \emph{Private} -- Visible to the class only.
+\item \emph{Public} -- Visible to the world.
+\item \emph{Protected} -- Visible to the package and all subclasses.    
+\end{enumerate}
+
+
+
+
+
+
+\end{frame}
+
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{static, final, abstract}
+
+\end{frame}
+
+
+
+\begin{frame}[containsverbatim]{try catch finally}
+
+\end{frame}
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{if else}
+
+\end{frame}
+
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{switch}
+
+\end{frame}
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{Interfaces}
+
+\end{frame}
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{dconstructor}
+
+\end{frame}
+
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{utility functions -- parseint etc.}
+
+\end{frame}
+
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{threads}
+
+\end{frame}
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{Inner class}
+
+\end{frame}
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{scope}
+
+\end{frame}
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{packages}
+
+\end{frame}
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{HashMap}
+
+\end{frame}
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{stack memory}
+
+\end{frame}
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{static memory}
+
+\end{frame}
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{heap memory -- object location}
+
+\end{frame}
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{Array of Objects}
+
+\end{frame}
 
 
 
