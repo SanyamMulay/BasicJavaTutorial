@@ -553,10 +553,7 @@ System.out.println("Raised exception...");
 }
 
 \begin{enumerate}
-\item Try and catch is basically used for handling exception
-\item The static modifier for creating class methods and variables 
-\item The final modifier for finalizing the implementations of classes, methods, and variables.
-\item The abstract modifier for creating abstract classes and methods.
+\item Try and catch are basically used for handling exception in java.
 \item 
 
 
@@ -571,6 +568,24 @@ System.out.println("Raised exception...");
 
 
 \begin{frame}[containsverbatim,allowframebreaks]{if else}
+
+\begin{java}
+	public static int minFunction(int n1, int n2) {
+int min;
+if (n1 > n2)
+min = n2;
+else
+min = n1;
+return min;
+}
+
+\end{java}
+
+\item 
+\item 
+
+
+\end{enumerate}
 
 \end{frame}
 
@@ -604,6 +619,36 @@ System.out.println("Raised exception...");
 
 
 \begin{frame}[containsverbatim,allowframebreaks]{Inner class}
+
+\begin{java}
+class OuterClass {
+private int i = 9;
+ 
+// Creating instance of inner class and calling inner class function
+public void createInner() {
+InnerClass i1 = new InnerClass();
+i1.getValue();
+}
+ 
+// inner class declarataion
+class InnerClass {
+public void getValue() {
+// accessing private variable from outer class
+System.out.println("value of i -" + i);
+}
+}
+}
+
+
+\end{java}
+
+\begin{enumerate}
+\item
+\item
+
+end{enumerate}
+
+
 
 \end{frame}
 
