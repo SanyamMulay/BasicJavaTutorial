@@ -615,6 +615,25 @@ return min;
 
 \begin{frame}[containsverbatim,allowframebreaks]{threads}
 
+\begin{java}
+class MyThread extends Thread
+{
+public void run()
+{
+System.out.println("Important job running in MyThread");
+}
+}
+
+\end{java}
+
+\begin{enumerate}
+\item Every thread of execution begins as an instance of class Thread.
+\item  In any case Thread objects needs to be created before creating Thread of Execution.
+\iten MyThread t = new MyThread()
+
+
+
+\end{enumerate}
 \end{frame}
 
 
@@ -643,9 +662,9 @@ System.out.println("value of i -" + i);
 \end{java}
 
 \begin{enumerate}
-\item
-\item
-
+\item Inner classes are class within Class. Inner class instance has special relationship with Outer class.
+\item Inner class can be accessed only through live instance of outer class.
+\item 
 end{enumerate}
 
 
