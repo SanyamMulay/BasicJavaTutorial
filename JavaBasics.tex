@@ -475,11 +475,97 @@ public class PersonTest{
 
 \begin{frame}[containsverbatim,allowframebreaks]{static, final, abstract}
 
+\begin{java}
+
+import java.io.*;
+
+public class Employee{
+// salary variable is a private static variable
+private static double salary;
+// DEPARTMENT is a constant
+public static final String DEPARTMENT = "Development ";
+public static void main(String args[]){
+salary = 1000;
+System.out.println(DEPARTMENT+"average salary:"+salary);
+}
+}
+\end{java}
+\begin{enumerate}
+\item Class variables also known as static variables are declared with the static keyword in a class, but outside a method, constructor or a block.
+\item Static variables are rarely used other than being declared as constants. Constants are variables that are declared as public/private, final and static. 
+\item Static variables are stored in static memory. It is rare to use static variables other than declared final and used as either public or private constants.
+\item Visibility is similar to instance variables. However, most static variables are declared public since they must be available for users of the class.
+\item Static variables are created when the program starts and destroyed when the program stops.
+\item Static variables can be accessed by calling with the class name .ClassName.VariableName. 
+\item If the static variables are not public and final the naming syntax is the same as instance and local variables.  
+\end{enumerate}
+\end{java}
+
+
+\end{frame}
+
+
+\begin{frame}[containsverbatim,allowframebreaks]{static, final, abstract}
+
+\begin{java}
+	publicclass className {
+// ...
+}
+private boolean myFlag;
+static final double weeks =9.5;
+protected static final int BOXWIDTH =42;
+public static void main(String[] arguments){
+// body of method
+}
+
+\end{java}
+
+\begin{enumerate}
+\item Java provides a number of non-access modifiers to achieve many other functionality.
+\item The static modifier for creating class methods and variables 
+\item The final modifier for finalizing the implementations of classes, methods, and variables.
+\item The abstract modifier for creating abstract classes and methods.
+\item 
+
+
+\end{enumerate}
 \end{frame}
 
 
 
 \begin{frame}[containsverbatim]{try catch finally}
+
+\begin{java}
+
+import java.io.*;
+public class Test{
+public static void main(String args[]){
+String Str1=new String("Welcome to Tutorialspoint.com");
+char[]Str2=newchar[7];
+try{
+Str1.getChars(2,9,Str2,0);
+System.out.print("Copied Value = ");
+System.out.println(Str2);
+}catch(Exception ex){
+System.out.println("Raised exception...");
+}
+}
+}
+
+\begin{enumerate}
+\item Try and catch is basically used for handling exception
+\item The static modifier for creating class methods and variables 
+\item The final modifier for finalizing the implementations of classes, methods, and variables.
+\item The abstract modifier for creating abstract classes and methods.
+\item 
+
+
+\end{enumerate}
+
+
+\end{java}
+
+
 
 \end{frame}
 
