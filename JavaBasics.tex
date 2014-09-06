@@ -161,6 +161,7 @@ public class ClassName{
 
 \end{frame}
 
+
 \begin{frame}[containsverbatim]{Basic Class Syntax}
 \begin{java}
 public class Dog{
@@ -474,22 +475,125 @@ public class PizzaTest{
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% prashant 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[containsverbatim,allowframebreaks]{static, final, abstract}
+
+\begin{java}
+
+import java.io.*;
+
+public class Employee{
+// salary variable is a private static variable
+private static double salary;
+// DEPARTMENT is a constant
+public static final String DEPARTMENT = "Development ";
+public static void main(String args[]){
+salary = 1000;
+System.out.println(DEPARTMENT+"average salary:"+salary);
+}
+}
+\end{java}
+\begin{enumerate}
+\item Class variables also known as static variables are declared with the static keyword in a class, but outside a method, constructor or a block.
+\item Static variables are rarely used other than being declared as constants. Constants are variables that are declared as public/private, final and static. 
+\item Static variables are stored in static memory. It is rare to use static variables other than declared final and used as either public or private constants.
+\item Visibility is similar to instance variables. However, most static variables are declared public since they must be available for users of the class.
+\item Static variables are created when the program starts and destroyed when the program stops.
+\item Static variables can be accessed by calling with the class name .ClassName.VariableName. 
+\item If the static variables are not public and final the naming syntax is the same as instance and local variables.  
+\end{enumerate}
+\end{java}
+
+
 \end{frame}
+
 
 
 
 \begin{frame}[containsverbatim,allowframebreaks]{static, final, abstract}
 
+\begin{java}
+	publicclass className {
+// ...
+}
+private boolean myFlag;
+static final double weeks =9.5;
+protected static final int BOXWIDTH =42;
+public static void main(String[] arguments){
+// body of method
+}
+
+\end{java}
+
+\begin{enumerate}
+\item Java provides a number of non-access modifiers to achieve many other functionality.
+\item The static modifier for creating class methods and variables 
+\item The final modifier for finalizing the implementations of classes, methods, and variables.
+\item The abstract modifier for creating abstract classes and methods.
+\item 
+
+
+\end{enumerate}
 \end{frame}
 
 
 
 \begin{frame}[containsverbatim]{try catch finally}
 
+\begin{java}
+
+import java.io.*;
+public class Test{
+public static void main(String args[]){
+String Str1=new String("Welcome to Tutorialspoint.com");
+char[]Str2=newchar[7];
+try{
+Str1.getChars(2,9,Str2,0);
+System.out.print("Copied Value = ");
+System.out.println(Str2);
+}catch(Exception ex){
+System.out.println("Raised exception...");
+}
+}
+}
+
+\begin{enumerate}
+\item Try and catch are basically used for handling exception in java.
+\item 
+
+
+\end{enumerate}
+
+
+\end{java}
+
+
+
 \end{frame}
 
 
 \begin{frame}[containsverbatim,allowframebreaks]{if else}
+
+\begin{java}
+	public static int minFunction(int n1, int n2) {
+int min;
+if (n1 > n2)
+min = n2;
+else
+min = n1;
+return min;
+}
+
+\end{java}
+
+\item 
+\item 
+
+
+\end{enumerate}
 
 \end{frame}
 
@@ -519,10 +623,59 @@ public class PizzaTest{
 
 \begin{frame}[containsverbatim,allowframebreaks]{threads}
 
+\begin{java}
+class MyThread extends Thread
+{
+public void run()
+{
+System.out.println("Important job running in MyThread");
+}
+}
+
+\end{java}
+
+\begin{enumerate}
+\item Every thread of execution begins as an instance of class Thread.
+\item  In any case Thread objects needs to be created before creating Thread of Execution.
+\iten MyThread t = new MyThread()
+
+
+
+\end{enumerate}
 \end{frame}
 
 
 \begin{frame}[containsverbatim,allowframebreaks]{Inner class}
+
+\begin{java}
+class OuterClass {
+private int i = 9;
+ 
+// Creating instance of inner class and calling inner class function
+public void createInner() {
+InnerClass i1 = new InnerClass();
+i1.getValue();
+}
+ 
+// inner class declarataion
+class InnerClass {
+public void getValue() {
+// accessing private variable from outer class
+System.out.println("value of i -" + i);
+}
+}
+}
+
+
+\end{java}
+
+\begin{enumerate}
+\item Inner classes are class within Class. Inner class instance has special relationship with Outer class.
+\item Inner class can be accessed only through live instance of outer class.
+\item 
+end{enumerate}
+
+
 
 \end{frame}
 
