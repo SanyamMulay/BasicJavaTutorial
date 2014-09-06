@@ -161,24 +161,6 @@ public class ClassName{
 
 \end{frame}
 
-\section{Enums}
-\begin{frame}[containsverbatim]{Enum Example}
-\begin{java}
-class Pizza{
-	enum PizzaSize{ SMALL, MEDUIM, LARGE }
-	PizzaSize size;
-}
-
-public class PizzaTest{
-	public static void main(String args[]){
-		Pizza p =new Pizza();
-		p.size =Pizza.PizzaSize.MEDUIM ;
-	}
-}
-\end{java}
-\end{frame}
-
-
 \begin{frame}[containsverbatim]{Basic Class Syntax}
 \begin{java}
 public class Dog{
@@ -198,7 +180,7 @@ public class Dog{
 \end{java}
 \end{frame}
 
-
+\subsection{Constructors}
 \begin{frame}[containsverbatim]{Constructors}
 \begin{java}
 public class Person{
@@ -237,10 +219,11 @@ Dog Bruno = new Dog("Bruno");
 
 \end{frame}
 
+\subsection{Getters and Setters}
 \begin{frame}[containsverbatim]{Getters and Setters}
 \begin{java}
 public class Dog{
-  String name;  
+  private String name;  
   
   public Dog(){
   }
@@ -258,7 +241,7 @@ public class Dog{
 \end{java}
 \end{frame}
 
-
+\subsection{Classes - things to remember}
 \begin{frame}[containsverbatim,allowframebreaks]{Things to remember while creating Classes}
 
 \begin{enumerate}
@@ -283,28 +266,7 @@ public class Dog{
 \end{enumerate}
 \end{frame}
 
-\begin{frame}[containsverbatim,allowframebreaks]{Data Types}
-\begin{enumerate}
-\item Primitive Data Types
-\begin{enumerate}
-\item byte
-\item short
-\item int
-\item long
-\item float
-\item double
-\item boolean
-\item char
-\end{enumerate}
-\item Object Data Types
-\begin{enumerate}
-\item Dog
-\item Person ...
-\end{enumerate}
-\end{enumerate}
-\end{frame}
-
-
+\subsection{Inheritance}
 \begin{frame}[containsverbatim]{Inheretence -- IS -- A Relation}
 \begin{java}
 public class Animal{
@@ -345,7 +307,7 @@ public class Car extends Vehicle{//IS-A relation
 \end{frame}
 
 
-
+\subsection{Singleton}
 \begin{frame}[containsverbatim]{Singleton Class}
 \begin{java}
 public class SingletonClass{
@@ -364,6 +326,7 @@ private static SingletonClass instance = null;
 \end{java}
 \end{frame}
 
+\section{Objects}
 \begin{frame}[containsverbatim]{Creating Objects}
 \begin{java}
 import package.name.Person;
@@ -470,8 +433,44 @@ public class PersonTest{
 \item \emph{Protected} -- Visible to the package and all subclasses.    
 \end{enumerate}
 
+\section{Primitive Data Types}
+\begin{frame}[containsverbatim,allowframebreaks]{Data Types}
+\begin{enumerate}
+\item Primitive Data Types
+\begin{enumerate}
+\item byte
+\item short
+\item int
+\item long
+\item float
+\item double
+\item boolean
+\item char
+\end{enumerate}
+\item Object Data Types
+\begin{enumerate}
+\item Dog
+\item Person ...
+\end{enumerate}
+\end{enumerate}
+\end{frame}
 
+\section{Enums}
+\begin{frame}[containsverbatim]{Enum Example}
+\begin{java}
+class Pizza{
+	enum PizzaSize{ SMALL, MEDUIM, LARGE }
+	PizzaSize size;
+}
 
+public class PizzaTest{
+	public static void main(String args[]){
+		Pizza p =new Pizza();
+		p.size =Pizza.PizzaSize.MEDUIM ;
+	}
+}
+\end{java}
+\end{frame}
 
 
 
