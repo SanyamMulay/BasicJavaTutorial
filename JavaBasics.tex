@@ -497,126 +497,114 @@ System.out.println(DEPARTMENT+"average salary:"+salary);
 }
 }
 \end{java}
-\begin{enumerate}
-\item Class variables also known as static variables are declared with the static keyword in a class, but outside a method, constructor or a block.
-\item Static variables are rarely used other than being declared as constants. Constants are variables that are declared as public/private, final and static. 
-\item Static variables are stored in static memory. It is rare to use static variables other than declared final and used as either public or private constants.
-\item Visibility is similar to instance variables. However, most static variables are declared public since they must be available for users of the class.
-\item Static variables are created when the program starts and destroyed when the program stops.
-\item Static variables can be accessed by calling with the class name .ClassName.VariableName. 
-\item If the static variables are not public and final the naming syntax is the same as instance and local variables.  
-\end{enumerate}
-%\end{java}
-
-
-\end{frame}
-
-
-
-
-\begin{frame}[containsverbatim,allowframebreaks]{static, final, abstract}
-
-\begin{java}
-	publicclass className {
-// ...
-}
-private boolean myFlag;
-static final double weeks =9.5;
-protected static final int BOXWIDTH =42;
-public static void main(String[] arguments){
-// body of method
-}
-
-\end{java}
 
 \begin{enumerate}
+\item \emph{static modifier} -- used to create methods and variables which can be called without creating class object.
+\item \emph{final modifier} -- used to finalize the implementations of classes, methods, and variables.
+\item \emph{abstract modifier} -- for creating abstract classes and methods.
 \item Java provides a number of non-access modifiers to achieve many other functionality.
 \item The static modifier for creating class methods and variables 
 \item The final modifier for finalizing the implementations of classes, methods, and variables.
 \item The abstract modifier for creating abstract classes and methods.
-\item 
-
-
 \end{enumerate}
+
 \end{frame}
-
-
 
 \begin{frame}[containsverbatim]{try catch finally}
-
 \begin{java}
-
-import java.io.*;
-public class Test{
-public static void main(String args[]){
-String Str1=new String("Welcome to Tutorialspoint.com");
-char[]Str2=newchar[7];
 try{
-Str1.getChars(2,9,Str2,0);
-System.out.print("Copied Value = ");
-System.out.println(Str2);
-}catch(Exception ex){
-System.out.println("Raised exception...");
+	....
+	//Protected code
+}catch(ExceptionName e1){
+	....
+	// code to handle exception
+}finally{
+	....
+	//clean-up code
 }
-}
-}
-
-\begin{enumerate}
-\item Try and catch are basically used for handling exception in java.
-\item 
-
-
-\end{enumerate}
-
-
+	
 \end{java}
-
-
-
 \end{frame}
-
 
 \begin{frame}[containsverbatim,allowframebreaks]{if else}
-
 \begin{java}
-	public static int minFunction(int n1, int n2) {
-int min;
-if (n1 > n2)
-min = n2;
-else
-min = n1;
-return min;
+if(condition){
+	....
+	
+}else if(condition){
+	....
+	
+}else{
+	....
 }
-
 \end{java}
-
-%\item 
-%\item 
-
-
-%\end{enumerate}
-
 \end{frame}
-
 
 
 \begin{frame}[containsverbatim,allowframebreaks]{switch}
 
+\begin{java}
+
+switch(expression){
+case value :
+//Statements
+break;//optional
+case value :
+//Statements
+break;//optional
+//You can have any number of case statements.
+default://Optional
+//Statements
+}
+
+\end{java}
+
+\begin{enumerate}
+\item The variable used in a switch statement can only be a byte, short, int, or char.
+\item The value for a case must be the same data type as the variable in the switch and it must be a constant or a literal.
+\item When the variable being switched on is equal to a case, the statements following that case will execute until a break statement is reached.
+\item Not every case needs to contain a break. If no break appears, the flow of control will fall throughto subsequent cases until a break is reached.
+\item The default
+case can be used for performing a task when none of the cases is true. No break is needed in the default
+case.
+\end{enumerate}
 \end{frame}
 
 
 \begin{frame}[containsverbatim,allowframebreaks]{Interfaces}
+\begin{java}
+class InterfaceExampleTwo implements interfaceTwo {
+ 
+    @Override
+    public void methhod() {
+        System.out.println(var);
+    }
+ }
+ 
+interface interfaceTwo {
+    public final int var = 9;
+ 
+    public abstract void methhod();
+}
+\end{java}
+\begin{enumerate}
+\item All Interface methods are implicitly public and abstract.
+\item Interfaces can declare only Constant. Instance variables are not allowed. It means all variables inside Interface must be public, static, final. 
+\item Variables inside interface are implicitly public static final.
+\item Interface methods can not be static, final.
+\item Interface can extend one or more other interface. Note: Interface can only extend other interface.
+
+
+\end{enumerate}
 
 \end{frame}
-
-
-\begin{frame}[containsverbatim,allowframebreaks]{dconstructor}
-
-\end{frame}
-
 
 
 \begin{frame}[containsverbatim,allowframebreaks]{utility functions -- parseint etc.}
+\begin{java}
+int i = Integer.parseInt("245");
+float f = Float.parseFloat("245");
+\end{java}
 
 \end{frame}
 
@@ -625,46 +613,40 @@ return min;
 \begin{frame}[containsverbatim,allowframebreaks]{threads}
 
 \begin{java}
-class MyThread extends Thread
-{
-public void run()
-{
-System.out.println("Important job running in MyThread");
+class MyThread extends Thread{
+	public void run(){
+		System.out.println("in MyThread");
+	}
 }
-}
+MyThread t = new MyThread();
 
+class MyRunnable implements Runnable{
+	Public void run(){
+		System.out.println("in MyRunnable");
+	}
+}
+MyRunnable r = new MyRunnable();
+Thread t = new Thread(r);
 \end{java}
-
-\begin{enumerate}
-\item Every thread of execution begins as an instance of class Thread.
-\item  In any case Thread objects needs to be created before creating Thread of Execution.
-\item MyThread t = new MyThread()
-
-
-
-\end{enumerate}
 \end{frame}
 
 
-\begin{frame}[containsverbatim,allowframebreaks]{Inner class}
 
+\begin{frame}[containsverbatim,allowframebreaks]{Inner class}
 \begin{java}
 class OuterClass {
-private int i = 9;
- 
-// Creating instance of inner class and calling inner class function
-public void createInner() {
-InnerClass i1 = new InnerClass();
-i1.getValue();
-}
- 
-// inner class declarataion
-class InnerClass {
-public void getValue() {
-// accessing private variable from outer class
-System.out.println("value of i -" + i);
-}
-}
+	private int i = 9;
+	public void createInner() {
+		InnerClass i1 = new InnerClass();
+		i1.getValue();
+	}
+	 
+	// inner class declarataion
+	class InnerClass {
+		public void getValue(){
+		System.out.println("value of i:" + i);
+		}
+	}
 }
 
 
@@ -673,15 +655,12 @@ System.out.println("value of i -" + i);
 \begin{enumerate}
 \item Inner classes are class within Class. Inner class instance has special relationship with Outer class.
 \item Inner class can be accessed only through live instance of outer class.
-\item 
 \end{enumerate}
-
-
-
 \end{frame}
 
 
 \begin{frame}[containsverbatim,allowframebreaks]{scope}
+
 
 \end{frame}
 
